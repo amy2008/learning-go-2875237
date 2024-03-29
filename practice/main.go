@@ -18,4 +18,10 @@ func main() {
 	roundedSum := math.Round(floatSum)
 	fmt.Println("Rounded sum:", roundedSum)
 
+	intFloatSum := float64(i1) + f1
+	fmt.Println("Int and Float sum:", intFloatSum)
+
+	intFloatSum2 := i1 + int(f1)
+	fmt.Println("Int and Float sum:", intFloatSum2)
+
 }
