@@ -5,14 +5,29 @@ import (
 )
 
 func main() {
-	poodle := Dog{"Poodle", 10}
+	poodle := Dog{"Poodle", 10, "Woof!"}
 	fmt.Println(poodle)
 	fmt.Printf("%+v\n", poodle)
 	fmt.Printf("Breed: %v\nWeight: %v\n", poodle.Breed, poodle.Weight)
+
+	poodle.Speak()
+	poodle.Sound = "Arf!"
+	poodle.Speak()
+	poodle.Sound = "Bur!"
+	poodle.SpeakThreeTimes()
 }
 
 // Dog is a struct
 type Dog struct {
 	Breed  string
 	Weight int
+	Sound  string
+}
+
+func (d Dog) Speak() {
+	fmt.Println(d.Sound)
+}
+
+func (d Dog) SpeakThreeTimes() {
+	fmt.Println("%v %v %v", d.Sound)
 }
