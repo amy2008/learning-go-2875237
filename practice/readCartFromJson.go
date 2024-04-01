@@ -6,7 +6,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"strings"
 )
 
 // Change these boolean values to control whether you see
@@ -23,7 +22,7 @@ type cartItem struct {
 // getCartFromJson() returns a slice containing cartItem objects.
 func getCartFromJson(jsonString string) []cartItem {
 	var cart []cartItem
-	carts := make([]cartItem, 0, 20)
+	/* carts := make([]cartItem, 0, 20)
 
 	// Your code goes here.
 	decoder := json.NewDecoder(strings.NewReader(jsonString))
@@ -33,8 +32,13 @@ func getCartFromJson(jsonString string) []cartItem {
 			panic(err)
 		}
 		carts = append(carts, cart...)
+		return carts
+	} */
+	err := json.Unmarshal([]byte(jsonString), &cart) // From the instructor David.
+	if err != nil {
+		panic(err)
 	}
-	return carts
+	return cart
 }
 
 func main() {
