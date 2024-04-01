@@ -17,9 +17,9 @@ func convertToMap(items []string) map[string]float64 {
 	// Your code goes here
 
 	i := 0
-	num := len(items)
+	num := float64(len(items))
 	for k := range items {
-		result[items[k]] = float64(100 / num)
+		result[items[k]] = 100 / num
 		i++
 	}
 	return result
